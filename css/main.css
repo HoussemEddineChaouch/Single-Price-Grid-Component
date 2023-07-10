@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+* {
+    box-sizing: border-box ;
+    margin: 0 ;
+    padding: 0 ;
+}
+:root {
+    --Cyan : hsl(179, 62%, 43%) ;
+    --Bright-Yellow : hsl(71, 73%, 54%) ;
+
+    --Light-Gray : hsl(204, 43%, 93%) ;
+    --Grayish-Blue : hsl(218, 22%, 67%) ;
+}
+body {
+    background-color: var(--Light-Gray);
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.component {
+    width: 700px;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    grid-template-rows:  auto 1fr ;
+    grid-template-areas: 
+    "tc tc"
+    "lc rc";
+    box-shadow:  0 0 20px hsl(218, 22%, 67% , 60%);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.top-content {
+    grid-area: tc;
+    background-color: white;
+}
+
+.left-content {
+    grid-area: lc;
+    background-color: var(--Cyan);
+}
+.top-content p.title {
+    color: var(--Cyan);
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 700;
+}
+.top-content h2 {
+  color: var(--Bright-Yellow);
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.top-content p {
+    line-height: 1.6;
+    color: var(--Grayish-Blue);
+}
+.right-content {
+  grid-area: rc;
+  background-color: hsl(179, 51%, 53%) ;
+}
+.top-content ,
+.left-content ,
+.right-content {
+    padding: 35px;
+}
+.left-content h1 {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: white;
+}
+.price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  
+}
+.price h2 {
+    font-weight: 700;
+    color: white;
+    font-size: 30px;
+}
+.price span {
+    color: rgb(132 224 228);
+}
+.left-content p {
+    color: var(--Light-Gray);
+    margin-top: 8px;
+}
+.left-content a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    background-color: var(--Bright-Yellow);
+    width: 100%;
+    padding: 15px;
+    margin: 25px 0 0;
+    border-radius: 5px;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.158) ;
+}
+.right-content h1 {
+    font-weight: 400;
+    font-size: 23px;
+    color: white;
+    margin-bottom: 18px;
+}
+.right-content p {
+    line-height: 1.6;
+    font-size: 15px;
+    color: var(--Light-Gray);
+}
+@media ( max-width : 768px ) {
+    body {
+      height: 135vh;
+    }
+    .component {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
+}
